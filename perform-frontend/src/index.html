@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Perform Frontend</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="dev-debug-banner" style="background:#fffb; padding:8px 12px; border-bottom:1px solid #eee; font-family:Inter,system-ui;">Dev server: index.html served — if you see this but the app is blank, check browser console for runtime errors.</div>
+    <app-root></app-root>
+    <script>
+      // Simple error overlay to surface runtime errors in-page for debugging
+      function showErrorOverlay(msg){
+        let el = document.getElementById('dev-error-overlay');
+        if(!el){
+          el = document.createElement('div');
+          el.id = 'dev-error-overlay';
+          el.style.position='fixed'; el.style.left='8px'; el.style.right='8px'; el.style.bottom='8px'; el.style.zIndex=999999;
+          el.style.background='rgba(255,255,255,0.98)'; el.style.border='1px solid #c00'; el.style.padding='12px'; el.style.borderRadius='8px';
+          el.style.fontFamily='monospace'; el.style.whiteSpace='pre-wrap'; el.style.maxHeight='40vh'; el.style.overflow='auto';
+          document.body.appendChild(el);
+        }
+        el.textContent = msg;
+      }
+
+      window.addEventListener('error', (e) => {
+        showErrorOverlay('Error: ' + (e && e.error && e.error.message ? e.error.message : e.message || String(e)) + '\n' + (e.error && e.error.stack ? e.error.stack : ''));
+      });
+      window.addEventListener('unhandledrejection', (e) => {
+        showErrorOverlay('Unhandled Rejection: ' + (e.reason && e.reason.message ? e.reason.message : String(e.reason)) + '\n' + (e.reason && e.reason.stack ? e.reason.stack : ''));
+      });
+    </script>
+  </body>
+</html>

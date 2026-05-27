@@ -1,0 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+	--pf-bg: #f3f6f9;
+	--pf-card: #ffffff;
+	--pf-accent: #246bff;
+	--pf-muted: #6b7280;
+	--pf-radius: 10px;
+}
+
+html,body{height:100%;}
+body { font-family: Inter, system-ui, Arial, sans-serif; background: var(--pf-bg); color: #0f172a; margin:0; }
+#app, app-root { padding: 28px; box-sizing:border-box; }
+.container { max-width: 980px; margin: 28px auto; }
+h1 { margin: 0 0 16px 0; font-weight:700; font-size:1.4rem }
+
+.card { background: var(--pf-card); border-radius: var(--pf-radius); box-shadow: 0 8px 28px rgba(15,23,42,0.06); padding: 18px; }
+
+.layout { display:grid; grid-template-columns: 1fr 420px; gap: 18px; align-items:start; margin-top:14px }
+@media (max-width:900px){ .layout{ grid-template-columns: 1fr; } }
+
+ion-input { --padding-start: 12px; }
+
+pre { background: var(--pf-card); padding: 12px; border-radius: 8px; border: 1px solid #eef2ff; overflow:auto; white-space:pre-wrap; }
+
+.small-btn { font-size:0.9rem; padding:6px 10px; border-radius:8px; border:none; background:#eef4ff; color:var(--pf-accent); cursor:pointer; }
+
+
