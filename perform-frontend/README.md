@@ -4,6 +4,20 @@ A minimal Angular frontend for submitting athlete analysis jobs and viewing resu
 
 ---
 
+## Table of Contents
+
+- [Author](#author)
+- [Stack](#stack)
+- [Quick Start](#quick-start)
+- [Project Structure](#project-structure)
+- [Component Architecture](#component-architecture)
+- [API Integration](#api-integration)
+- [Proxy Configuration](#proxy-configuration)
+- [Deployment](#deployment)
+- [Design Decisions](#design-decisions)
+
+---
+
 ## Author
 
 **Md Ehteshamul Haque Tamvir**
